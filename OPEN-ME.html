@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opening Klokd Landing Page...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0A0A0F;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .loader {
+      max-width: 400px;
+      padding: 40px;
+    }
+    h1 {
+      color: #00FF00;
+      font-size: 48px;
+      margin-bottom: 16px;
+      text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    }
+    p {
+      color: #888888;
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top-color: #00FF00;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 24px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    a {
+      display: inline-block;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, #00AA00, #00FF00);
+      color: #0A0A0F;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(0, 255, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <h1>Klokd</h1>
+    <div class="spinner"></div>
+    <p>Redirecting to landing page...</p>
+    <a href="index.html">Click here if not redirected</a>
+  </div>
+  <script>
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1500);
+  </script>
+</body>
+</html>
