@@ -212,7 +212,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 100px 0 40px;
+  padding: 100px 0 60px;
   overflow: hidden;
 }
 
@@ -233,10 +233,26 @@ body {
 .hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-rows: auto auto;
+  gap: 0 80px;
   align-items: center;
   position: relative;
   z-index: 1;
+}
+
+.hero-text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.hero-visual {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+.browser-badges {
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .hero-title {
@@ -333,30 +349,92 @@ body {
   margin: 0 2px;
 }
 
-/* ===== Coming Soon Badge Large ===== */
-.coming-soon-badge-large {
+/* ===== Browser Badges ===== */
+.browser-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding-top: 28px;
+}
+
+.badge-strip {
+  width: 100%;
+  font-size: 12px;
+  color: var(--text-gray);
+  margin-top: 4px;
+  letter-spacing: 0.01em;
+}
+
+.browser-badge {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 12px 32px;
-  background: var(--neon-green);
+  gap: 12px;
+  padding: 12px 24px;
   border-radius: 50px;
-  margin-top: 32px;
-  margin-bottom: 24px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.coming-soon-badge-large i {
+.browser-badge--active {
+  background: var(--neon-green);
+  cursor: pointer;
+}
+
+.browser-badge--active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px var(--neon-green-glow);
+}
+
+.browser-badge--muted {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: default;
+}
+
+.browser-badge i {
   font-size: 24px;
+}
+
+.browser-badge--active i {
   color: var(--bg-black);
 }
 
-.coming-soon-badge-large h2 {
-  font-size: 20px;
+.browser-badge--muted i {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.browser-badge__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.browser-badge__name {
+  font-size: 15px;
   font-weight: 700;
-  color: var(--bg-black);
-  margin: 0;
   letter-spacing: 0.02em;
+}
+
+.browser-badge--active .browser-badge__name {
+  color: var(--bg-black);
+}
+
+.browser-badge--muted .browser-badge__name {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.browser-badge__sub {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.browser-badge--active .browser-badge__sub {
+  color: rgba(10, 10, 15, 0.7);
+}
+
+.browser-badge--muted .browser-badge__sub {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /* ===== Hero Visual ===== */
@@ -488,7 +566,6 @@ body {
   left: 0;
   right: 0;
   text-align: center;
-  z-index: 10;
 }
 
 .copyright-line p {
@@ -1173,19 +1250,46 @@ section {
 }
 
 /* ===== Responsive Design ===== */
+
+/* Tablet */
 @media (max-width: 1024px) {
   .hero {
-    padding: 100px 0 40px;
+    padding: 100px 0 0;
   }
 
   .hero-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-rows: auto;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .hero-text {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-visual {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .browser-badges {
+    grid-column: 1;
+    grid-row: 3;
+    justify-content: center;
+    padding-top: 16px;
+  }
+
+  .badge-strip {
     text-align: center;
   }
 
   .hero-title {
-    font-size: 48px;
+    font-size: 52px;
   }
 
   .hero-subtitle {
@@ -1194,62 +1298,45 @@ section {
 
   .dashboard-mockup {
     transform: none;
-    max-width: 500px;
+    max-width: 560px;
     margin: 0 auto;
   }
-
-  .coming-soon-badges {
-    justify-content: center;
-  }
-
-  .copyright-line {
-    padding-top: 40px;
-  }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .copyright-line {
-    position: relative;
-    padding-top: 60px;
-    padding-bottom: 0;
-  }
-}
-
+/* Large phones */
 @media (max-width: 768px) {
   .hero {
-    padding: 120px 0 40px;
+    padding: 100px 0 0;
     min-height: auto;
   }
 
+  .hero-content {
+    gap: 24px;
+  }
+
   .hero-title {
-    font-size: 48px;
-    text-align: center;
-  }
-
-  .hero-title:first-child {
-    font-size: 56px;
-  }
-
-  .hero-title:nth-child(2) {
-    font-size: 38px;
+    font-size: 44px;
   }
 
   .hero-subtitle {
     font-size: 16px;
   }
 
-  .coming-soon-badge-large {
-    gap: 12px;
-    padding: 10px 28px;
-    border-radius: 40px;
+  .browser-badge {
+    padding: 8px 14px;
+    gap: 8px;
   }
 
-  .coming-soon-badge-large i {
-    font-size: 20px;
-  }
-
-  .coming-soon-badge-large h2 {
+  .browser-badge i {
     font-size: 18px;
+  }
+
+  .browser-badge__name {
+    font-size: 13px;
+  }
+
+  .browser-badge__sub {
+    font-size: 11px;
   }
 
   .dashboard-mockup {
@@ -1257,13 +1344,23 @@ section {
   }
 
   .copyright-line {
-    position: relative;
-    bottom: auto;
-    margin-top: 20px;
-    padding-top: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    padding: 10px 0;
+    background: rgba(10, 10, 15, 0.92);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--glass-border);
+  }
+
+  .hero {
+    padding-bottom: 52px;
   }
 }
 
+/* Small phones */
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;
@@ -1283,63 +1380,53 @@ section {
   }
 
   .hero {
-    padding: 100px 0 30px;
+    padding: 88px 0 0;
   }
 
   .hero-title {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .hero-title:first-child {
-    font-size: 56px;
-  }
-
-  .hero-title:nth-child(2) {
-    font-size: 32px;
+    font-size: 38px;
   }
 
   .hero-subtitle {
     font-size: 15px;
-    margin-bottom: 24px;
-  }
-
-  .coming-soon-badge-large {
-    gap: 10px;
-    padding: 8px 24px;
-    border-radius: 35px;
-    margin-top: 24px;
     margin-bottom: 20px;
   }
 
-  .coming-soon-badge-large i {
-    font-size: 18px;
+  .browser-badges {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
   }
 
-  .coming-soon-badge-large h2 {
+  .browser-badge {
+    padding: 7px 12px;
+    gap: 7px;
+  }
+
+  .browser-badge i {
     font-size: 16px;
   }
 
-  .dashboard-mockup {
-    padding: 12px;
-    overflow: hidden;
-    max-height: 200px;
-    position: relative;
+  .browser-badge__name {
+    font-size: 12px;
+  }
+
+  .browser-badge__sub {
+    font-size: 10px;
   }
 
   .app-preview-img {
-    object-fit: cover;
-    object-position: bottom;
-    height: 100%;
-  }
-
-  .copyright-line {
-    margin-top: 40px;
-    padding-top: 20px;
+    width: 100%;
+    height: auto;
   }
 
   .copyright-line p {
-    font-size: 12px;
+    font-size: 11px;
+  }
+
+  .browser-badges {
+    padding-top: 20px;
   }
 }
 

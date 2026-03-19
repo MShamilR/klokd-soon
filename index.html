@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Klokd - Coming Soon</title>
-  <meta name="description" content="Klokd is coming soon. Take control of your screen time.">
+  <title>Klokd — Your Digital Time Watch</title>
+  <meta name="description"
+    content="Klokd is a browser extension that helps you build healthier time habits. Elegant, effective, and private. Available now on Firefox.">
+  <meta name="keywords" content="Klokd, screen time, browser extension, time management, productivity, Firefox, focus">
+  <meta property="og:title" content="Klokd — Your Digital Time Watch">
+  <meta property="og:description"
+    content="Elegant. Effective. Private. The time habit app for your browser. Try Klokd free on Firefox.">
+  <meta property="og:image" content="images/app-preview-2.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Klokd — Your Digital Time Watch">
+  <meta name="twitter:description" content="Elegant. Effective. Private. The time habit app for your browser.">
+  <meta name="twitter:image" content="images/app-preview-2.png">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
 </head>
+
 <body>
   <!-- Navigation -->
   <nav class="nav">
@@ -30,11 +46,6 @@
         <div class="hero-text">
           <h1 class="hero-title"><span class="text-glow">Klokd In,</span></h1>
           <h1 class="hero-title">Distractions Out.</h1>
-          <div class="coming-soon-badge-large">
-            <i class="fa-brands fa-chrome"></i>
-            <i class="fa-brands fa-firefox-browser"></i>
-            <h2>Coming Soon</h2>
-          </div>
           <p class="hero-subtitle">Elegant. Effective. Private.<br>Klokd - The Time Habit App</p>
         </div>
         <div class="hero-visual">
@@ -42,13 +53,32 @@
             <img src="images/app-preview-2.png" alt="Klokd Dashboard Preview" class="app-preview-img" />
           </div>
         </div>
+        <div class="browser-badges">
+          <div class="browser-badge browser-badge--muted">
+            <i class="fa-brands fa-chrome"></i>
+            <div class="browser-badge__text">
+              <span class="browser-badge__name">Chrome</span>
+              <span class="browser-badge__sub">Coming Soon</span>
+            </div>
+          </div>
+          <a href="https://addons.mozilla.org/en-US/firefox/addon/klokd/" target="_blank" rel="noopener noreferrer"
+            class="browser-badge browser-badge--active">
+            <i class="fa-brands fa-firefox-browser"></i>
+            <div class="browser-badge__text">
+              <span class="browser-badge__name">Firefox</span>
+              <span class="browser-badge__sub">Try Now — Free</span>
+            </div>
+          </a>
+          <p class="badge-strip">No account needed &middot; Privacy-first</p>
+        </div>
       </div>
       <div class="copyright-line">
-        <p>&copy; 2025 Klokd. All rights reserved.</p>
+        <p>&copy; <span id="copyright-year"></span> Klokd. All rights reserved.</p>
       </div>
     </div>
   </section>
 
   <script src="js/script.js"></script>
 </body>
+
 </html>

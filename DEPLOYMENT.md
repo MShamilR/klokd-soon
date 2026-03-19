@@ -7,6 +7,7 @@ Quick guide to get your landing page live on the internet!
 ### Option 1: Netlify (Recommended - 5 minutes)
 
 **Why Netlify?**
+
 - ✅ Free hosting
 - ✅ Auto SSL certificate
 - ✅ Custom domain support
@@ -26,6 +27,7 @@ Quick guide to get your landing page live on the internet!
    - You'll get a URL like: `random-name-123.netlify.app`
 
 3. **Deploy via Git** (Better for updates)
+
    ```bash
    cd klokd-landing
    git init
@@ -35,6 +37,7 @@ Quick guide to get your landing page live on the internet!
    git remote add origin https://github.com/yourusername/klokd-landing.git
    git push -u origin main
    ```
+
    - In Netlify, click "New site from Git"
    - Connect to GitHub
    - Select your repo
@@ -73,6 +76,7 @@ Quick guide to get your landing page live on the internet!
 **Steps:**
 
 1. **Push to GitHub**
+
    ```bash
    cd klokd-landing
    git init
@@ -122,7 +126,10 @@ Quick guide to get your landing page live on the internet!
 4. **Update HTML**
    ```html
    <!-- Replace button hrefs in index.html -->
-   <a href="https://buy.stripe.com/YOUR_LINK_HERE" class="btn btn-primary btn-large">
+   <a
+     href="https://buy.stripe.com/YOUR_LINK_HERE"
+     class="btn btn-primary btn-large"
+   >
      Get Klokd Now - $14.99 →
    </a>
    ```
@@ -148,12 +155,17 @@ Quick guide to get your landing page live on the internet!
 
 ```html
 <!-- Add before </head> in index.html -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-XXXXXXXXXX");
 </script>
 ```
 
@@ -161,7 +173,11 @@ Quick guide to get your landing page live on the internet!
 
 ```html
 <!-- Add before </head> in index.html -->
-<script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
+<script
+  defer
+  data-domain="yourdomain.com"
+  src="https://plausible.io/js/script.js"
+></script>
 ```
 
 ---
@@ -181,11 +197,17 @@ Quick guide to get your landing page live on the internet!
 - [ ] **Create `sitemap.xml`** (use https://www.xml-sitemaps.com)
 - [ ] **Add Open Graph tags** for social sharing:
   ```html
-  <meta property="og:title" content="Klokd - Take Control of Your Screen Time">
-  <meta property="og:description" content="Stop endless scrolling. Block distractions. $14.99 one-time.">
-  <meta property="og:image" content="https://yourdomain.com/images/og-image.png">
-  <meta property="og:url" content="https://yourdomain.com">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="Klokd - Your Digital Time Watch" />
+  <meta
+    property="og:description"
+    content="Stop endless scrolling. Block distractions. Free."
+  />
+  <meta
+    property="og:image"
+    content="https://yourdomain.com/images/og-image.png"
+  />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
   ```
 - [ ] **Test on mobile devices**
 - [ ] **Check loading speed** (https://pagespeed.web.dev)
@@ -208,6 +230,7 @@ Quick guide to get your landing page live on the internet!
 
 1. **In Netlify**: Site settings → Domain management → Add custom domain
 2. **Add DNS records** (Netlify will show you what to add):
+
    ```
    Type: A
    Name: @
@@ -217,6 +240,7 @@ Quick guide to get your landing page live on the internet!
    Name: www
    Value: your-site.netlify.app
    ```
+
 3. **Wait** (can take 1-48 hours for DNS propagation)
 4. **SSL certificate auto-enabled** by Netlify
 
@@ -243,21 +267,25 @@ Quick guide to get your landing page live on the internet!
 ## 🆘 Troubleshooting
 
 ### Site Not Loading
+
 - Check if files are uploaded correctly
 - Clear browser cache
 - Check browser console for errors
 
 ### Payment Not Working
+
 - Verify Stripe/Gumroad link is correct
 - Test in incognito mode
 - Check payment provider dashboard
 
 ### Slow Loading
+
 - Optimize images (use https://tinypng.com)
 - Enable Cloudflare CDN
 - Minimize CSS/JS (if needed)
 
 ### Domain Not Working
+
 - Wait 24-48 hours for DNS propagation
 - Use https://dnschecker.org to verify
 - Double-check DNS records
