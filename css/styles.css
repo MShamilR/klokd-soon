@@ -354,8 +354,46 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   padding-top: 28px;
+}
+
+.browser-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.browser-icon--active {
+  color: var(--neon-green);
+  border: 1.5px solid var(--neon-green);
+}
+
+.browser-icon--active:hover {
+  opacity: 0.8;
+}
+
+.browser-icon--muted {
+  color: rgba(255, 255, 255, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  cursor: default;
+}
+
+.browser-icon--muted svg {
+  width: 1em;
+  height: 1em;
+}
+
+.browser-icon--muted img {
+  width: 1em;
+  height: 1em;
+  filter: invert(1) opacity(0.25);
 }
 
 .badge-strip {
@@ -435,6 +473,39 @@ body {
 
 .browser-badge--muted .browser-badge__sub {
   color: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Coming Soon Strip ===== */
+.coming-soon-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.coming-soon-strip__icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.coming-soon-strip__icon svg {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.coming-soon-strip__text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding-left: 4px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* ===== Hero Visual ===== */
@@ -1289,6 +1360,13 @@ section {
 
   .badge-strip {
     text-align: center;
+  }
+
+  .copyright-line {
+    position: relative;
+    bottom: auto;
+    margin-top: 32px;
+    padding-bottom: 24px;
   }
 
   .hero-title {

@@ -29,7 +29,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TT5TLWDD18"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-TT5TLWDD18');
   </script>
@@ -54,7 +54,10 @@
         <div class="hero-text">
           <h1 class="hero-title"><span class="text-glow">Klokd In,</span></h1>
           <h1 class="hero-title">Distractions Out.</h1>
-          <p class="hero-subtitle">Elegant. Effective. Private.<br>Klokd - Your Digital Time Watch</p>
+          <br>
+          <p class="hero-subtitle">Klokd - Your Digital Time Watch<br>Elegant. Effective. <span
+              class="text-glow">Private.</span></p>
+
         </div>
         <div class="hero-visual">
           <div class="dashboard-mockup">
@@ -62,26 +65,27 @@
           </div>
         </div>
         <div class="browser-badges">
-          <div class="browser-badge browser-badge--muted">
-            <i class="fa-brands fa-chrome"></i>
-            <div class="browser-badge__text">
-              <span class="browser-badge__name">Chrome</span>
-              <span class="browser-badge__sub">Coming Soon</span>
-            </div>
-          </div>
           <a href="https://addons.mozilla.org/en-US/firefox/addon/klokd/" target="_blank" rel="noopener noreferrer"
-            class="browser-badge browser-badge--active">
+            class="browser-icon browser-icon--active" title="Firefox — Try Now Free">
             <i class="fa-brands fa-firefox-browser"></i>
-            <div class="browser-badge__text">
-              <span class="browser-badge__name">Firefox</span>
-              <span class="browser-badge__sub">Try Now — Free</span>
-            </div>
           </a>
-          <p class="badge-strip">No account needed &middot; Privacy-first</p>
+          <span class="browser-icon browser-icon--muted" title="Chrome — Coming Soon">
+            <i class="fa-brands fa-chrome"></i>
+          </span>
+          <span class="browser-icon browser-icon--muted" title="Edge — Coming Soon">
+            <i class="fa-brands fa-edge"></i>
+          </span>
+          <span class="browser-icon browser-icon--muted" title="Brave — Coming Soon">
+            <img src="https://img.icons8.com/?size=100&id=ze7acUqja_dP&format=png&color=000000" alt="Brave" width="1em"
+              height="1.5em" />
+          </span>
+          <p class="badge-strip">Privacy-first &middot; &nbsp;No account needed </p>
         </div>
       </div>
       <div class="copyright-line">
-        <p>&copy; <span id="copyright-year"></span> Klokd. All rights reserved. &middot; <a href="?modal=privacy" class="privacy-link" id="privacy-link">Privacy Policy</a> &middot; <a href="?modal=support" class="privacy-link" id="support-link">Support</a></p>
+        <p>&copy; <span id="copyright-year"></span> Klokd. All rights reserved. &middot; <a href="?modal=privacy"
+            class="privacy-link" id="privacy-link">Privacy Policy</a> &middot; <a href="?modal=support"
+            class="privacy-link" id="support-link">Support</a></p>
       </div>
     </div>
   </section>
@@ -97,10 +101,12 @@
         <p class="modal-updated">Last updated: March 2026</p>
 
         <h3>Overview</h3>
-        <p>Klokd is built privacy-first. All data stays on your device — we have no servers, no accounts, and we collect nothing about you.</p>
+        <p>Klokd is built privacy-first. All data stays on your device — we have no servers, no accounts, and we collect
+          nothing about you.</p>
 
         <h3>Data We Collect</h3>
-        <p>Klokd collects <strong>no personal data</strong>. The extension only stores the following locally in your browser:</p>
+        <p>Klokd collects <strong>no personal data</strong>. The extension only stores the following locally in your
+          browser:</p>
         <ul>
           <li>Time spent on websites (stored locally in browser storage)</li>
           <li>Your configured time limits and preferences</li>
@@ -117,13 +123,16 @@
         <p>No permission is used to read page content, form data, passwords, or any personal information.</p>
 
         <h3>Third Parties</h3>
-        <p>Klokd does not share any data with third parties. There are no analytics, no tracking pixels, no ads, and no external API calls made by the extension.</p>
+        <p>Klokd does not share any data with third parties. There are no analytics, no tracking pixels, no ads, and no
+          external API calls made by the extension.</p>
 
         <h3>Data Deletion</h3>
-        <p>All data is stored in your browser's local storage. You can delete it at any time by uninstalling the extension or clearing the extension's storage via your browser settings.</p>
+        <p>All data is stored in your browser's local storage. You can delete it at any time by uninstalling the
+          extension or clearing the extension's storage via your browser settings.</p>
 
         <h3>Contact</h3>
-        <p>If you have any questions about this privacy policy, please open an issue on our GitHub or contact us via the Firefox Add-ons listing page.</p>
+        <p>If you have any questions about this privacy policy, please open an issue on our GitHub or contact us via the
+          Firefox Add-ons listing page.</p>
       </div>
     </div>
   </div>
@@ -149,21 +158,27 @@
         <h3>Leave a Review</h3>
         <p>Found Klokd useful? A review helps others discover it:</p>
         <ul>
-          <li><a href="https://addons.mozilla.org/en-US/firefox/addon/klokd/" target="_blank" rel="noopener noreferrer" class="modal-link">Firefox Add-ons page</a></li>
+          <li><a href="https://addons.mozilla.org/en-US/firefox/addon/klokd/" target="_blank" rel="noopener noreferrer"
+              class="modal-link">Firefox Add-ons page</a></li>
           <li><span style="color: var(--text-gray);">Chrome Web Store — coming soon</span></li>
         </ul>
 
         <h3>Common Questions</h3>
         <ul>
-          <li><strong>Does Klokd sync across devices?</strong> — No. All data is local to each browser instance by design.</li>
+          <li><strong>Does Klokd sync across devices?</strong> — No. All data is local to each browser instance by
+            design.</li>
           <li><strong>Can I export my data?</strong> — Not yet, but it's on the roadmap.</li>
-          <li><strong>Does it work in private/incognito mode?</strong> — Only if you explicitly allow it in your browser's extension settings.</li>
-          <li><strong>How do I reset all my data? (Firefox)</strong> — Go to the Add-ons Manager, find Klokd, and clear its storage under Permissions.</li>
-          <li><strong>How do I reset all my data? (Chrome)</strong> — Go to chrome://extensions, find Klokd, click Details, then clear site data.</li>
+          <li><strong>Does it work in private/incognito mode?</strong> — Only if you explicitly allow it in your
+            browser's extension settings.</li>
+          <li><strong>How do I reset all my data? (Firefox)</strong> — Go to the Add-ons Manager, find Klokd, and clear
+            its storage under Permissions.</li>
+          <li><strong>How do I reset all my data? (Chrome)</strong> — Go to chrome://extensions, find Klokd, click
+            Details, then clear site data.</li>
         </ul>
 
         <h3>Contact</h3>
-        <p>You can reach us via the Firefox Add-ons listing page using the "Contact Author" link. Chrome support inquiries can be filed as GitHub issues.</p>
+        <p>You can reach us via the Firefox Add-ons listing page using the "Contact Author" link. Chrome support
+          inquiries can be filed as GitHub issues.</p>
       </div>
     </div>
   </div>
