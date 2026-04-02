@@ -1403,7 +1403,7 @@ section {
   }
 
   .hero-title {
-    font-size: 44px;
+    font-size: 38px;
   }
 
   .hero-subtitle {
@@ -1428,7 +1428,8 @@ section {
   }
 
   .dashboard-mockup {
-    max-width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
   }
 
   .copyright-line {
