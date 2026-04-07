@@ -393,11 +393,17 @@ body {
   height: 1em;
 }
 
+.browser-icon img {
+  width: 1.2em;
+  height: 1.2em;
+}
+
 .browser-icon--muted img {
   width: 1em;
   height: 1em;
   filter: invert(1) opacity(0.22);
 }
+
 
 .badge-strip {
   width: 100%;
