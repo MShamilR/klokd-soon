@@ -260,6 +260,16 @@ body {
   z-index: 0;
 }
 
+.heatmap-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;

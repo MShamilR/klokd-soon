@@ -243,5 +243,59 @@ function initModal(paramValue, overlayId, closeBtnId, triggerId) {
 initModal('privacy', 'privacy-modal', 'modal-close', 'privacy-link');
 initModal('support', 'support-modal', 'support-modal-close', 'support-link');
 
+// Hero heatmap squares
+function drawHeatmap() {
+  const canvas = document.getElementById('heatmap-canvas');
+  const hero = document.querySelector('.hero');
+  if (!canvas || !hero) return;
+
+  const w = hero.offsetWidth;
+  const h = hero.offsetHeight;
+  canvas.width = w;
+  canvas.height = h;
+
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, w, h);
+
+  const cell = 50;
+  const cols = Math.ceil(w / cell);
+  const rows = Math.ceil(h / cell);
+  const isMobile = w < 768;
+  if (isMobile) return; // too distracting on small screens
+
+  const edgeCols = 3;
+  const edgeRows = 2;
+
+  // Deterministic pseudo-random (seeded)
+  function sr(seed) {
+    const x = Math.sin(seed * 9301 + 49297) * 233280;
+    return x - Math.floor(x);
+  }
+
+  const opacities = [0.05, 0.09, 0.13, 0.17, 0.22];
+
+  for (let c = 0; c < cols; c++) {
+    for (let r = 0; r < rows; r++) {
+      const onEdge = c < edgeCols || c >= cols - edgeCols
+                  || r < edgeRows || r >= rows - edgeRows;
+      if (!onEdge) continue;
+
+      // ~20% fill rate
+      if (sr(c * 137 + r) > 0.20) continue;
+
+      const opacity = opacities[Math.floor(sr(c * 37 + r * 91) * opacities.length)];
+      ctx.fillStyle = `rgba(96, 147, 108, ${opacity})`;
+      ctx.fillRect(c * cell + 1, r * cell + 1, cell - 2, cell - 2);
+    }
+  }
+}
+
+drawHeatmap();
+let heatmapTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(heatmapTimer);
+  heatmapTimer = setTimeout(drawHeatmap, 150);
+});
+
 console.log("Klokd Landing Page Loaded");
 console.log("Your Digital Time Watch");
