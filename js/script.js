@@ -17,33 +17,40 @@ const nav = document.querySelector(".nav");
 let lastScroll = 0;
 
 // Theme toggle
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
 
 function setTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('klokd-theme', theme);
-  themeIcon.className = theme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
-  if (nav) nav.style.background = '';
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("klokd-theme", theme);
+  themeIcon.className =
+    theme === "light" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+  if (nav) nav.style.background = "";
 }
 
 // Initialize from localStorage (default: light)
-setTheme(localStorage.getItem('klokd-theme') || 'light');
+setTheme(localStorage.getItem("klokd-theme") || "light");
 
-themeToggle.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  setTheme(current === 'light' ? 'dark' : 'light');
+themeToggle.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  setTheme(current === "light" ? "dark" : "light");
 });
 
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
 
   if (currentScroll > 100) {
-    nav.style.background = isDark ? "rgba(10, 10, 15, 0.95)" : "rgba(245, 247, 245, 0.95)";
-    nav.style.boxShadow = isDark ? "0 4px 30px rgba(0, 0, 0, 0.3)" : "0 4px 30px rgba(0, 0, 0, 0.07)";
+    nav.style.background = isDark
+      ? "rgba(10, 10, 15, 0.95)"
+      : "rgba(245, 247, 245, 0.95)";
+    nav.style.boxShadow = isDark
+      ? "0 4px 30px rgba(0, 0, 0, 0.3)"
+      : "0 4px 30px rgba(0, 0, 0, 0.07)";
   } else {
-    nav.style.background = isDark ? "rgba(10, 10, 15, 0.8)" : "rgba(245, 247, 245, 0.9)";
+    nav.style.background = isDark
+      ? "rgba(10, 10, 15, 0.8)"
+      : "rgba(245, 247, 245, 0.9)";
     nav.style.boxShadow = "none";
   }
 
@@ -188,65 +195,66 @@ function initModal(paramValue, overlayId, closeBtnId, triggerId) {
   if (!overlay) return;
 
   function openModal() {
-    overlay.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
+    overlay.classList.add("is-open");
+    document.body.style.overflow = "hidden";
     const url = new URL(window.location);
-    url.searchParams.set('modal', paramValue);
-    history.pushState({modal: paramValue}, '', url);
+    url.searchParams.set("modal", paramValue);
+    history.pushState({ modal: paramValue }, "", url);
   }
 
   function closeModal() {
-    overlay.classList.remove('is-open');
-    document.body.style.overflow = '';
+    overlay.classList.remove("is-open");
+    document.body.style.overflow = "";
     const url = new URL(window.location);
-    url.searchParams.delete('modal');
-    history.pushState({}, '', url);
+    url.searchParams.delete("modal");
+    history.pushState({}, "", url);
   }
 
   if (trigger) {
-    trigger.addEventListener('click', function (e) {
+    trigger.addEventListener("click", function (e) {
       e.preventDefault();
       openModal();
     });
   }
 
   if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
+    closeBtn.addEventListener("click", closeModal);
   }
 
-  overlay.addEventListener('click', function (e) {
+  overlay.addEventListener("click", function (e) {
     if (e.target === overlay) closeModal();
   });
 
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && overlay.classList.contains("is-open"))
+      closeModal();
   });
 
-  window.addEventListener('popstate', function () {
-    const val = new URLSearchParams(window.location.search).get('modal');
+  window.addEventListener("popstate", function () {
+    const val = new URLSearchParams(window.location.search).get("modal");
     if (val === paramValue) {
-      overlay.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
+      overlay.classList.add("is-open");
+      document.body.style.overflow = "hidden";
     } else {
-      overlay.classList.remove('is-open');
-      if (!document.querySelector('.modal-overlay.is-open')) {
-        document.body.style.overflow = '';
+      overlay.classList.remove("is-open");
+      if (!document.querySelector(".modal-overlay.is-open")) {
+        document.body.style.overflow = "";
       }
     }
   });
 
-  if (new URLSearchParams(window.location.search).get('modal') === paramValue) {
+  if (new URLSearchParams(window.location.search).get("modal") === paramValue) {
     openModal();
   }
 }
 
-initModal('privacy', 'privacy-modal', 'modal-close', 'privacy-link');
-initModal('support', 'support-modal', 'support-modal-close', 'support-link');
+initModal("privacy", "privacy-modal", "modal-close", "privacy-link");
+initModal("support", "support-modal", "support-modal-close", "support-link");
 
 // Hero heatmap squares
 function drawHeatmap() {
-  const canvas = document.getElementById('heatmap-canvas');
-  const hero = document.querySelector('.hero');
+  const canvas = document.getElementById("heatmap-canvas");
+  const hero = document.querySelector(".hero");
   if (!canvas || !hero) return;
 
   const w = hero.offsetWidth;
@@ -254,7 +262,7 @@ function drawHeatmap() {
   canvas.width = w;
   canvas.height = h;
 
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, w, h);
 
   const cell = 50;
@@ -271,18 +279,24 @@ function drawHeatmap() {
     return x - Math.floor(x);
   }
 
-  const opacities = isMobile ? [0.08, 0.12, 0.16, 0.20] : [0.05, 0.09, 0.13, 0.17, 0.22];
+  const opacities = isMobile
+    ? [0.08, 0.12, 0.16, 0.2]
+    : [0.05, 0.09, 0.13, 0.17, 0.22];
 
   for (let c = 0; c < cols; c++) {
     for (let r = 0; r < rows; r++) {
-      const onEdge = c < edgeCols || c >= cols - edgeCols
-                  || r < edgeRows || r >= rows - edgeRows;
+      const onEdge =
+        c < edgeCols ||
+        c >= cols - edgeCols ||
+        r < edgeRows ||
+        r >= rows - edgeRows;
       if (!onEdge) continue;
 
       // ~20% fill rate on desktop, ~12% on mobile
-      if (sr(c * 137 + r) > (isMobile ? 0.12 : 0.20)) continue;
+      if (sr(c * 137 + r) > (isMobile ? 0.12 : 0.2)) continue;
 
-      const opacity = opacities[Math.floor(sr(c * 37 + r * 91) * opacities.length)];
+      const opacity =
+        opacities[Math.floor(sr(c * 37 + r * 91) * opacities.length)];
       ctx.fillStyle = `rgba(96, 147, 108, ${opacity})`;
       ctx.fillRect(c * cell + 1, r * cell + 1, cell - 2, cell - 2);
     }
@@ -291,10 +305,10 @@ function drawHeatmap() {
 
 drawHeatmap();
 let heatmapTimer;
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   clearTimeout(heatmapTimer);
   heatmapTimer = setTimeout(drawHeatmap, 150);
 });
 
 console.log("Klokd Landing Page Loaded");
-console.log("Your Digital Time Watch");
+console.log("Your Digital Habit Watch");

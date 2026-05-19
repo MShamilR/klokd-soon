@@ -197,7 +197,7 @@ Quick guide to get your landing page live on the internet!
 - [ ] **Create `sitemap.xml`** (use https://www.xml-sitemaps.com)
 - [ ] **Add Open Graph tags** for social sharing:
   ```html
-  <meta property="og:title" content="Klokd - Your Digital Time Watch" />
+  <meta property="og:title" content="Klokd - Your Digital Habit Watch" />
   <meta
     property="og:description"
     content="Stop endless scrolling. Block distractions. Free."

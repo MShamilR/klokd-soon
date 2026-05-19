@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Klokd — Your Digital Time Watch</title>
+  <title>Klokd — Your Digital Habit Watch</title>
   <meta name="description"
     content="Klokd is a browser extension that helps you build healthier time habits. Elegant, effective, and private. Available now on Firefox.">
   <meta name="keywords" content="Klokd, screen time, browser extension, time management, productivity, Firefox, focus">
-  <meta property="og:title" content="Klokd — Your Digital Time Watch">
+  <meta property="og:title" content="Klokd — Your Digital Habit Watch">
   <meta property="og:description"
     content="Elegant. Effective. Private. The time habit app for your browser. Try Klokd free on Firefox.">
   <meta property="og:image" content="images/app-preview-2.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Klokd — Your Digital Time Watch">
+  <meta name="twitter:title" content="Klokd — Your Digital Habit Watch">
   <meta name="twitter:description" content="Elegant. Effective. Private. The time habit app for your browser.">
   <meta name="twitter:image" content="images/app-preview-2.png">
-  <script>(function(){var t=localStorage.getItem('klokd-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+  <script>(function () { var t = localStorage.getItem('klokd-theme') || 'light'; document.documentElement.setAttribute('data-theme', t); })();</script>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +37,14 @@
 </head>
 
 <body>
+  <div class="announcement-bar" role="status" aria-live="polite">
+    <span class="announcement-bar__content">
+      <i class="fa-brands fa-android announcement-bar__icon" aria-hidden="true"></i>
+      <span class="announcement-bar__text">Android app waitlist opening soon <span class="announcement-bar__suffix">with
+          a revamped landing page.</span></span>
+    </span>
+  </div>
+
   <!-- Navigation -->
   <nav class="nav">
     <div class="container nav-content">
@@ -62,7 +70,7 @@
           <h1 class="hero-title"><span class="text-glow">Klokd In,</span></h1>
           <h1 class="hero-title">Distractions Out.</h1>
           <br>
-          <p class="hero-subtitle">Klokd - Your Digital Time Watch<br>Elegant. Effective. <span
+          <p class="hero-subtitle">Klokd - Your Digital Habit Watch<br>Elegant. Effective. <span
               class="text-glow">Private.</span></p>
 
         </div>
@@ -104,13 +112,22 @@
           <p class="badge-strip">Privacy-first &middot; &nbsp;No account needed </p>
         </div>
       </div>
-      <div class="copyright-line">
-        <p>Klokd &middot;&nbsp; &copy; <span id="copyright-year"></span> All rights reserved &middot;&nbsp; <a
-            href="?modal=privacy" class="privacy-link" id="privacy-link">Privacy Policy</a> &middot;&nbsp; <a
-            href="?modal=support" class="privacy-link" id="support-link">Support</a></p>
-      </div>
     </div>
   </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-compact">
+        <p class="footer-copy"><img src="images/logo.png" alt="" class="footer-copy-logo" width="14" height="14" />
+          Klokd &middot; &copy; <span id="copyright-year"></span> All rights reserved</p>
+        <p class="footer-links-inline">
+          <a href="?modal=privacy" class="privacy-link" id="privacy-link">Privacy Policy</a>
+          <span aria-hidden="true">&middot;</span>
+          <a href="?modal=support" class="privacy-link" id="support-link">Support</a>
+        </p>
+      </div>
+    </div>
+  </footer>
 
   <!-- Privacy Policy Modal -->
   <div class="modal-overlay" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
@@ -120,7 +137,7 @@
         <button class="modal-close" id="modal-close" aria-label="Close privacy policy">&times;</button>
       </div>
       <div class="modal-body">
-        <p class="modal-updated">Last updated: April 2026</p>
+        <p class="modal-updated">Last updated: 19th of May 2026</p>
 
         <h3>Overview</h3>
         <p>Klokd is built privacy-first. All data stays on your device — we have no servers, no accounts, and we collect
@@ -153,8 +170,8 @@
           extension or clearing the extension's storage via your browser settings.</p>
 
         <h3>Contact</h3>
-        <p>If you have any questions about this privacy policy, please open an issue on our GitHub or contact us via the
-          Firefox Add-ons listing page.</p>
+        <p>For privacy questions, contact <a href="mailto:support@klokd.app" class="modal-link">support@klokd.app</a>.
+          For bug reports, use the form in the extension dashboard settings page.</p>
       </div>
     </div>
   </div>
@@ -171,10 +188,9 @@
         <p>Having trouble with Klokd? Here are the best ways to get support.</p>
 
         <h3>Report a Bug or Request a Feature</h3>
-        <p>Open an issue on our GitHub repository — it's the fastest way to get a response:</p>
+        <p>Report a bug from the extension dashboard settings page:</p>
         <ul>
           <li>Describe what happened and what you expected</li>
-          <li>Include your browser (Firefox or Chrome), its version, and your OS</li>
         </ul>
 
         <h3>Leave a Review</h3>
@@ -182,7 +198,9 @@
         <ul>
           <li><a href="https://addons.mozilla.org/en-US/firefox/addon/klokd/" target="_blank" rel="noopener noreferrer"
               class="modal-link">Firefox Add-ons page</a></li>
-          <li><span style="color: var(--text-gray);">Chrome Web Store — coming soon</span></li>
+          <li><a
+              href="https://chromewebstore.google.com/detail/ombbfbpjohpmmcecffjhimgbkpcogdbn?utm_source=item-share-cb"
+              target="_blank" rel="noopener noreferrer" class="modal-link">Chrome Web Store</a></li>
         </ul>
 
         <h3>Common Questions</h3>
@@ -192,15 +210,18 @@
           <li><strong>Can I export my data?</strong> — Not yet, but it's on the roadmap.</li>
           <li><strong>Does it work in private/incognito mode?</strong> — Only if you explicitly allow it in your
             browser's extension settings.</li>
-          <li><strong>How do I reset all my data? (Firefox)</strong> — Go to the Add-ons Manager, find Klokd, and clear
-            its storage under Permissions.</li>
-          <li><strong>How do I reset all my data? (Chrome)</strong> — Go to chrome://extensions, find Klokd, click
-            Details, then clear site data.</li>
+          <li><strong>How do I reset my data?</strong> — Use the <strong>Delete Website History</strong> option in
+            dashboard settings page
+            to clear data for a
+            specific domain or <strong>Clear All History</strong> to fully reset all data, or use your browser's
+            built-in
+            extension/add-on management features.</li>
         </ul>
 
         <h3>Contact</h3>
-        <p>You can reach us via the Firefox Add-ons listing page using the "Contact Author" link. Chrome support
-          inquiries can be filed as GitHub issues.</p>
+        <p>For support, email <a href="mailto:support@klokd.app" class="modal-link">support@klokd.app</a>. For bug
+          reports, use the form in the extension dashboard settings page.</p>
+
       </div>
     </div>
   </div>
